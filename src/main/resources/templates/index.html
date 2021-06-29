@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"> </title>
+
+    <style>
+        table{font-size: 1em;}
+        p {font-size: 1em;}
+        h2{font-size: 1.5em;}
+    </style>
+
+</head>
+<body>
+
+    <h2 th:text="${saludo}"> </h2>
+    
+    <table th:if="${!horasPaises.isEmpty()}">
+        <thead><th> País </th><th> Hora </th></thead>
+        <tbody>
+            <tr th:each="pais : ${horasPaises}">
+                <td th:text="${pais.nombrePais}"></td><td th:text="${pais.horaPais}"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <p>Esta página es de pruebas - Andr7st</p>
+</body>
+</html>
